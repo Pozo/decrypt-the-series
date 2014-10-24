@@ -31,4 +31,23 @@ public class DecryptTheSeriesTest {
 
         assertEquals(3,dts.decrypt());
     }
+    @Test
+    public void testDecryptEmpty() throws Exception {
+        DecryptTheSeries dts = new DecryptTheSeries(numbers);
+
+        assertEquals(0,dts.decrypt());
+    }
+    @Test
+    public void testDecryptNull() throws Exception {
+        DecryptTheSeries dts = new DecryptTheSeries(null);
+
+        assertEquals(0,dts.decrypt());
+    }
+    @Test
+    public void testDecryptJustOneElement() throws Exception {
+        numbers.add(5);
+        DecryptTheSeries dts = new DecryptTheSeries(numbers);
+
+        assertEquals(0,dts.decrypt());
+    }
 }
